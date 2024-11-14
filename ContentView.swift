@@ -6,6 +6,10 @@ struct ContentView: View {
     func haddleCount(){
         counting += 1
     }
+    
+    func haddleRemoveCount(){
+        counting -= 1
+    }
     var body: some View {
         NavigationView{
             VStack {
@@ -15,15 +19,30 @@ struct ContentView: View {
                 Text("Hello, worlddddddd!")
                     .padding()
                 Text(String(counting)).padding(.bottom,30).padding(.top,10)
-                Button(action: haddleCount){
-                    Text("Count")
-                        .frame(height: 50)
-                        .frame(width:160)
-                }.background(Color.blue)
-                    .cornerRadius(8)
-                    .fontWeight(Font.Weight.bold)
-                    .foregroundColor(.white)
-                    .padding()
+                
+                Grid{
+                    GridRow{
+                        Button(action: haddleCount){
+                            Text("Count")
+                                .frame(height: 50)
+                                .frame(width:100)
+                        }.background(Color.blue)
+                            .cornerRadius(8)
+                            .fontWeight(Font.Weight.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                        Button(action: haddleRemoveCount){
+                            Text("Remove")
+                                .frame(height: 50)
+                                .frame(width:100)
+                        }.background(Color.blue)
+                            .cornerRadius(8)
+                            .fontWeight(Font.Weight.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                }
+                
 
                 NavigationLink(destination: DetailView()) {
                     Text("Go to Detail View")
