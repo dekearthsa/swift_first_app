@@ -3,7 +3,6 @@
 //  basic
 //
 //  Created by pcsishun on 10/6/2567 BE.
-//
 
 import SwiftUI
 
